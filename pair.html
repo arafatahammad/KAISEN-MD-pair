@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raheem-XMD Pair Code</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #000000, #001133, #003366, #000428, #004e92);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      opacity: 0.2;
+      filter: blur(1px);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0, 120, 255, 0.1) 0%, rgba(0, 0, 0, 0.7) 70%);
+      z-index: -1;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      border-radius: 25px;
+      padding: 50px;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 
+                  0 0 50px rgba(0, 212, 255, 0.2);
+      animation: fadeInScale 1.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #00d4ff, #ff0080, #ffaa00, #00d4ff);
+      background-size: 400% 400%;
+      animation: borderGlow 3s ease infinite;
+      border-radius: 25px;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    @keyframes borderGlow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .logo i {
+      font-size: 3.5rem;
+      background: linear-gradient(45deg, #00d4ff, #ff0080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: heartbeat 2s infinite;
+      filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
+    }
+
+    .logo h3 {
+      color: #ffffff;
+      font-family: 'Orbitron', monospace;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-top: 15px;
+      background: linear-gradient(45deg, #00d4ff, #ff0080, #ffaa00);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: textShimmer 3s ease infinite;
+      letter-spacing: 2px;
+    }
+
+    @keyframes textShimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .logo h6 {
+      color: #b0d4ff;
+      font-weight: 400;
+      margin-top: 15px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .input-container {
+      margin-top: 35px;
+      display: flex;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-radius: 15px;
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .input-container:focus-within {
+      border-color: rgba(0, 212, 255, 0.6);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    }
+
+    .input-container input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: white;
+      font-size: 1.1rem;
+      padding: 12px;
+      font-weight: 500;
+    }
+
+    .input-container input::placeholder {
+      color: #aaaaaa;
+    }
+
+    .input-container button {
+      background: linear-gradient(135deg, #0033ff, #00aaff);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .input-container button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 170, 255, 0.5);
+      background: linear-gradient(135deg, #0044ff, #00bbff);
+    }
+
+    .input-container button:active {
+      transform: translateY(-1px);
+    }
+
+    #result, #status-message {
+      margin-top: 25px;
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .code-display {
+      background: linear-gradient(135deg, #0033ff, #00aaff);
+      padding: 25px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', monospace;
+      font-weight: 600;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .code-display::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .code-display:hover::before {
+      left: 100%;
+    }
+
+    .code-display:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 170, 255, 0.5);
+    }
+
+    @keyframes fadeInScale {
+      from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.9); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+      }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #00d4ff;
+      border-radius: 50%;
+      animation: float 6s infinite linear;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .input-container {
+        flex-direction: column;
+      }
+      .input-container button {
+        width: 100%;
+      }
+      .box {
+        padding: 30px;
+        margin: 15px;
+      }
+      .logo h3 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="bg-video">
+    <source src="https://files.catbox.moe/6c30io.mp4" type="video/mp4" />
+  </video>
+  <div class="overlay"></div>
+  <div class="particles" id="particles"></div>
+  <div class="container">
+    <div class="box">
+      <div class="logo">
+        <i class="fas fa-heart"></i>
+        <h3>Raheem-XMD</h3>
+        <h6>Enter your WhatsApp number with country code</h6>
+      </div>
+      <div class="input-container">
+        <input id="number" placeholder="e.g. 917000000000" maxlength="15" />
+        <button id="submit">Generate</button>
+      </div>
+      <div id="status-message"></div>
+      <div id="result"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+  <script>
+    const video = document.getElementById('bg-video');
+    
+    // Enhanced video handling
+    video.addEventListener('loadeddata', () => {
+        video.play().catch(e => console.log('Video autoplay failed:', e));
+    });
+
+    // Unmute on user interaction
+    document.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            video.volume = 0.3;
+        }
+    }, { once: true });
+
+    const numberInput = document.getElementById("number");
+    const submitBtn = document.getElementById("submit");
+    const statusMessage = document.getElementById("status-message");
+    const result = document.getElementById("result");
+
+    function showStatus(message, type = 'info') {
+      statusMessage.textContent = message;
+      statusMessage.style.color = type === 'error' ? '#ff4d4d' : type === 'success' ? '#00ffcc' : '#ffffff';
+    }
+
+    async function copyToClipboard(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        return false;
+      }
+    }
+
+    function createCodeDisplay(code) {
+      const codeDiv = document.createElement('div');
+      codeDiv.className = 'code-display';
+      codeDiv.textContent = code;
+      codeDiv.onclick = async () => {
+        const success = await copyToClipboard(code);
+        codeDiv.textContent = success ? 'Copied!' : code;
+        setTimeout(() => codeDiv.textContent = code, 2000);
+      };
+      return codeDiv;
+    }
+
+    submitBtn.addEventListener("click", async () => {
+      const phoneNumber = numberInput.value.replace(/\D/g, '');
+      if (!phoneNumber || phoneNumber.length < 10) {
+        showStatus("Please enter a valid number", "error");
+        return;
+      }
+      showStatus("Generating code...", "info");
+      result.innerHTML = "";
+      try {
+        const res = await axios.get(`/code?number=${phoneNumber}`);
+        if (res.data && res.data.code) {
+          showStatus("Code generated successfully", "success");
+          result.appendChild(createCodeDisplay(res.data.code));
+        } else {
+          showStatus("Failed to get code", "error");
+        }
+      } catch {
+        showStatus("Error connecting to server", "error");
+      }
+    });
+
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 30;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Initialize particles
+    createParticles();
+  </script>
+</body>
+</html>
